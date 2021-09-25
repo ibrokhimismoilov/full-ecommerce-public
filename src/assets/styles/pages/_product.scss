@@ -1,0 +1,245 @@
+.product {
+  @include flex(flex-start, flex-start);
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  &__img {
+    @include flex(flex-start, flex-start);
+    max-width: calc(60% - 20px);
+    width: 100%;
+    margin-right: 20px;
+    flex-wrap: wrap;
+
+    @include tablet {
+      max-width: calc(50% - 20px);
+    }
+
+    @include mobile {
+      max-width: 100%;
+      margin-right: 0;
+    }
+
+    &-list {
+      width: 20%;
+      height: 100%;
+      overflow-y: auto;
+      height: 700px;
+
+      @include tablet {
+        height: 400px;
+      }
+
+      @include mobile {
+        height: 300px;
+      }
+    }
+
+    &-item {
+      cursor: pointer;
+    }
+
+    &-main {
+      position: relative;
+      height: 700px;
+      margin-left: 10px;
+      width: calc(80% - 10px);
+
+      @include tablet {
+        height: 400px;
+      }
+
+      @include mobile {
+        height: 300px;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        object-position: center top;
+      }
+    }
+  }
+
+  &__desc {
+    width: 100%;
+    padding: 2rem 2rem 3rem;
+    overflow: hidden;
+    position: relative;
+    max-height: 300px;
+
+    &.expand {
+      max-height: max-content;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    &.mobile {
+      display: none;
+      padding: 0 0 3rem 0;
+
+      @include mobile {
+        display: block;
+      }
+    }
+
+    &-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 2rem 0;
+    }
+
+    &-content {
+      font-size: 1.25rem;
+      line-height: 1.875rem;
+      text-align: justify;
+    }
+
+    &-toggle {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .info {
+    flex-grow: 1;
+    position: sticky;
+    top: $header-shrink-height;
+    padding-top: 2rem;
+
+    @include mobile {
+      position: relative;
+      top: unset;
+    }
+
+    &__title {
+      font-size: 2.5rem;
+      font-weight: normal;
+    }
+
+    &__item {
+      margin-top: 2rem;
+
+      &-price {
+        color: $primary;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
+      &-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      button {
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__list {
+      @include flex(center, flex-start);
+
+      &-item {
+        @include flex(center, center);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid $text-secondary;
+        cursor: pointer;
+        margin-right: 1rem;
+
+        @include mobile {
+          width: 40px;
+          height: 40px;
+        }
+
+        &.active {
+          border-color: $primary;
+          box-shadow: 0 0 1rem $primary;
+        }
+
+        &:hover {
+          border-color: $primary;
+        }
+
+        .circle {
+          border: 5px solid $main-bg;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+
+        &-size {
+          font-size: 1.5rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &__quantity {
+      @include flex(flex-start, flex-start);
+
+      &-item {
+        display: flex;
+      }
+
+      &-btn {
+        @include flex(center, center);
+        width: 30px;
+        height: 30px;
+        border: 2px solid $text-secondary;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: color 0.3s ease-out;
+        &:hover {
+          color: $primary;
+        }
+      }
+
+      &-input {
+        @include flex(center, center);
+        height: 30px;
+        width: 90px;
+        font-size: 1.5rem;
+        border-top: 2px solid $text-secondary;
+        border-bottom: 2px solid $text-secondary;
+      }
+    }
+  }
+}
+
+.admin {
+  .product {
+    &__img {
+      max-width: calc(50% - 20px);
+
+      @include mobile {
+        max-width: 100%;
+      }
+
+      &-list {
+        height: 500px;
+
+        @include tablet {
+          height: 300px;
+        }
+      }
+
+      &-main {
+        height: 500px;
+
+        @include tablet {
+          height: 300px;
+        }
+      }
+    }
+  }
+}

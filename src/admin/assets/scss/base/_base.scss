@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.7px;
+  font-size: 13px;
+  overflow-y: auto;
+  min-width: 320px;
+}
+.admin {
+  a {
+    text-decoration: none;
+    color: var(--text-color);
+
+    &:hover {
+      color: var(--main-color) !important;
+    }
+  }
+  button {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  input {
+    border: 2px solid transparent;
+    outline: 0;
+  }
+
+  textarea:focus,
+  select:focus,
+  input:focus {
+    border: 2px solid var(--main-color);
+  }
+}
+
+.page-header {
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: capitalize;
+
+  &__date {
+    font-size: 1rem;
+  }
+}
+
+.card {
+  padding: 30px 15px;
+  margin-bottom: 30px;
+  background-color: var(--main-bg);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+
+.full-height {
+  height: 100%;
+}
+
+.card.full-height {
+  height: calc(100% - 30px);
+}
+
+.card__header {
+  text-transform: capitalize;
+}
+
+.card > div ~ div {
+  margin-top: 30px;
+}
+
+.card__footer {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.light-background {
+  background-color: var(--main-bg-light);
+  color: var(--dark);
+}
+
+.dark-background {
+  background-color: var(--main-bg-dark);
+  color: var(--white);
+}
+
+@each $color, $val in $admin-colors {
+  .#{$color}-color {
+    background-color: $val;
+    color: var(--white);
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "shopping",
+    "count": "1,995",
+    "title": "Total sales"
+  },
+  {
+    "icon": "cart",
+    "count": "2,001",
+    "title": "Daily visits"
+  },
+  {
+    "icon": "money",
+    "count": "$2,632",
+    "title": "Total income"
+  },
+  {
+    "icon": "receipt",
+    "count": "1,711",
+    "title": "Total orders"
+  }
+]

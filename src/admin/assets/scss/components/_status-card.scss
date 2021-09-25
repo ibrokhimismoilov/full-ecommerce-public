@@ -1,0 +1,58 @@
+.status-card {
+  padding: 30px 15px;
+  @include flex(stretch, flex-start);
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.3s ease-out;
+  background: var(--main-bg);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  transition: color 0.4s ease-out;
+
+  &::before {
+    content: "";
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 50%;
+    background-image: linear-gradient(
+      to top right,
+      var(--main-color),
+      var(--second-color)
+    );
+    position: absolute;
+    left: -50%;
+    top: 0;
+    transform: scale(0);
+    transition: transform 0.8s ease-out;
+  }
+
+  &:hover {
+    color: var(--text-white);
+    &::before {
+      transition: transform 0.4s ease-out;
+      transform: scale(3);
+    }
+  }
+
+  &__icon {
+    @include flex();
+    width: 30%;
+    font-weight: 900;
+    font-size: 2.5rem;
+    z-index: 1;
+  }
+
+  &__info {
+    font-weight: 600;
+    z-index: 1;
+    flex-grow: 1;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  &__count {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+}

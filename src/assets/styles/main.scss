@@ -1,0 +1,30 @@
+// base
+@import "./base/normalize";
+@import "./base/var";
+@import "./base/mixins";
+@import "./base/base";
+@import "./base/animations";
+
+// ===================================
+
+// components
+@import "./components/header";
+@import "./components/footer";
+@import "./components/hero-slider";
+@import "./components/btn";
+@import "./components/section";
+@import "./components/policy-card";
+@import "./components/policy-card_loading";
+@import "./components/product-card";
+@import "./components/product-card_loading";
+@import "./components/custom-checkbox";
+@import "./components/loading-client";
+@import "./components/product-view-modal";
+
+// ===================================
+
+// pages
+@import "./pages/auth";
+@import "./pages/catalog";
+@import "./pages/product";
+@import "./pages/cart";

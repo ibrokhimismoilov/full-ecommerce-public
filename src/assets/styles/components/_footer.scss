@@ -1,0 +1,102 @@
+.footer {
+  padding-top: 70px;
+  box-shadow: $box-shadow;
+  font-size: 1.1rem;
+
+  &__title {
+    // background: red;
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    margin: 0;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  &__logo {
+    position: relative;
+    @include flex(flex-start, flex-start);
+    flex-direction: column;
+    display: inline-flex;
+    transition: 0.3s ease-out;
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: $primary;
+    z-index: 2;
+    -webkit-text-stroke: 1px $primary;
+
+    &::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 100%;
+      width: 0%;
+      transition: 0.3s ease-out;
+    }
+
+    &:hover {
+      color: transparent;
+    }
+  }
+
+  &__content {
+    p {
+      margin-bottom: 1.25rem;
+      a {
+        padding: 5px 10px;
+        position: relative;
+        z-index: 1;
+        transition: 0.3s ease-out;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 2px;
+          background: $primary;
+          z-index: -1;
+          transition: 0.3s ease-out;
+        }
+
+        &:hover {
+          color: $text-white !important;
+          &::before {
+            width: calc(100%);
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    order: 1;
+
+    @include tablet {
+      &:last-child {
+        order: 0;
+      }
+    }
+  }
+
+  &__bottom {
+    font-size: 1.25rem;
+    margin-top: 70px;
+    padding: 30px 15px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    @include flex(center, center);
+    a {
+      color: $primary;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

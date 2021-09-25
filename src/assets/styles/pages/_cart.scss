@@ -1,0 +1,175 @@
+.cart {
+  @include flex(flex-start, flex-start);
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  &__list {
+    width: calc(100% - 300px);
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    width: calc(300px - 30px);
+    padding: 20px;
+    margin-right: 30px;
+    box-shadow: $box-shadow;
+    position: sticky;
+    top: calc(#{$header-shrink-height} + 40px);
+
+    @include tablet {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 30px;
+      position: unset;
+    }
+
+    &-content {
+      & > * {
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1.25rem;
+      }
+
+      &__price {
+        @include flex(center, space-between);
+        padding: 10px 0;
+        font-size: 1.25rem;
+
+        span:nth-child(2) {
+          font-size: 2rem;
+          color: $primary;
+          font-weight: 600;
+        }
+      }
+    }
+
+    &-btn {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      & > * {
+        flex-grow: 1;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      & > a {
+        display: block;
+        flex-grow: 1;
+        width: 100%;
+        .btn {
+          width: 100%;
+        }
+      }
+      button:first-child {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  &__item {
+    @include flex(center, flex-start);
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #ddd;
+    }
+
+    &-img {
+      margin-right: 10px;
+      height: 150px;
+      width: 110px;
+      img {
+        height: 100%;
+      }
+    }
+
+    &-content {
+      @include flex(center, flex-start);
+      flex-grow: 1;
+
+      @include mobile {
+        @include flex(flex-start, center);
+        flex-direction: column;
+
+        & > * {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    &-info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-right: 20px;
+    }
+
+    &-name {
+      width: 40%;
+      margin-bottom: 10px;
+      @include mobile {
+        width: 100%;
+      }
+    }
+
+    &-name,
+    &-price {
+      font-size: 1.25rem;
+    }
+
+    &-quantity {
+      @include flex(flex-start, flex-start);
+      margin-right: 20px;
+      margin-left: auto;
+      @include mobile {
+        margin-left: initial;
+      }
+
+      &-item {
+        display: flex;
+      }
+
+      &-btn {
+        @include flex(center, center);
+        width: 30px;
+        height: 30px;
+        border: 2px solid $text-secondary;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: color 0.3s ease-out;
+        &:hover {
+          color: $primary;
+        }
+      }
+
+      &-input {
+        @include flex(center, center);
+        height: 30px;
+        width: 90px;
+        font-size: 1.5rem;
+        border-top: 2px solid $text-secondary;
+        border-bottom: 2px solid $text-secondary;
+      }
+    }
+
+    &-del {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      cursor: pointer;
+      transition: 0.3s ease-out;
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}

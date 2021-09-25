@@ -1,0 +1,56 @@
+@mixin flex($align-items: initial, $justify-content: initial) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin mobile {
+  @media only screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin policy-loading {
+  min-height: 1rem;
+  background-color: $gradient-base-color;
+  background-image: linear-gradient(
+    90deg,
+    $gradient-base-color 0px,
+    $gradient-shine-color 40px,
+    $gradient-base-color 80px
+  );
+  background-size: 600px;
+  animation: policy-shine-lines 1.6s infinite linear;
+}
+
+@mixin policy-icon-loading {
+  min-height: 1rem;
+  background-color: $gradient-base-color;
+  background-image: linear-gradient(
+    90deg,
+    $gradient-base-color 0px,
+    $gradient-shine-color 40px,
+    $gradient-base-color 80px
+  );
+  background-size: 600px;
+  animation: policy-shine-avatar 1.6s infinite linear;
+}
+
+@mixin product-loading {
+  min-height: 1rem;
+  background-color: $gradient-base-color;
+  background-image: linear-gradient(
+    90deg,
+    $gradient-base-color 0px,
+    $gradient-shine-color 40px,
+    $gradient-base-color 80px
+  );
+  background-size: 200%;
+  animation: product-shine-lines 1.2s infinite linear;
+}

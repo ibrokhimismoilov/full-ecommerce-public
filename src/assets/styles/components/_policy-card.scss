@@ -1,0 +1,111 @@
+.policy-card {
+  position: relative;
+  @include flex(center, flex-start);
+  padding: 20px;
+  padding-left: 0;
+  box-shadow: $box-shadow;
+  transition: transform 0.5s ease-out;
+
+  &:hover {
+    z-index: 1;
+    transform: translateY(-20px);
+  }
+
+  &__icon {
+    @include flex(center, center);
+    width: 40%;
+    color: $primary;
+    * {
+      stroke: $primary;
+      font-size: 3rem;
+    }
+  }
+
+  &__info {
+    &-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    &-description {
+      font-size: 1rem;
+      color: $text-secondary;
+    }
+  }
+}
+
+.policy-card {
+  &_loading &__info {
+    width: 100%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_loading &__info-name {
+    display: block;
+    min-height: 1rem;
+    background-color: $gradient-base-color;
+    background-image: linear-gradient(
+      90deg,
+      $gradient-base-color 0px,
+      $gradient-shine-color 40px,
+      $gradient-base-color 80px
+    );
+    background-size: 600px;
+    animation: shine-lines 1.6s infinite linear;
+  }
+
+  &_loading &__info-description {
+    display: block;
+    min-height: 1rem;
+    background-color: $gradient-base-color;
+    background-image: linear-gradient(
+      90deg,
+      $gradient-base-color 0px,
+      $gradient-shine-color 40px,
+      $gradient-base-color 80px
+    );
+    background-size: 600px;
+    animation: shine-lines 1.6s infinite linear;
+  }
+
+  &_loading &__icon {
+    margin-left: 20px;
+    width: calc(40% - 10px);
+    height: 100%;
+    background-color: $gradient-base-color;
+    background-image: linear-gradient(
+      90deg,
+      $gradient-base-color 0px,
+      $gradient-shine-color 40px,
+      $gradient-base-color 80px
+    );
+    background-size: 600px;
+    animation: shine-avatar 1.6s infinite linear;
+    svg {
+      display: none;
+    }
+  }
+}
+
+@keyframes shine-lines {
+  0% {
+    background-position: -100px;
+  }
+  40%,
+  100% {
+    background-position: 140px;
+  }
+}
+
+@keyframes shine-avatar {
+  0% {
+    background-position: -90px;
+  }
+  40%,
+  100% {
+    background-position: 150px;
+  }
+}

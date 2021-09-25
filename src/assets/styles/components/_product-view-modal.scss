@@ -1,0 +1,47 @@
+.product-view__modal {
+  position: fixed;
+  z-index: 110;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  padding-left: 30px;
+  padding-right: 30px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  &-close {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  &-content {
+    width: 100%;
+    margin: auto;
+    padding: 2rem;
+    max-width: 1200px;
+    background-color: $main-bg;
+    animation: productViewModal 0.3s forwards 1 ease-out;
+
+    .product__info.info {
+      top: 0;
+      padding-top: 0;
+
+      @include mobile {
+        padding-top: 30px;
+        width: 100%;
+      }
+    }
+  }
+}

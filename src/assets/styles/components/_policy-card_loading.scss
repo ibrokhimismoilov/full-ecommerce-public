@@ -1,0 +1,23 @@
+.policy-card {
+  &_loading &__info {
+    width: 100%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_loading &__info-name {
+    @include policy-loading;
+  }
+
+  &_loading &__info-description {
+    @include policy-loading;
+  }
+
+  &_loading &__icon {
+    @include policy-icon-loading;
+    svg {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.custom-checkbox {
+  @include flex(center, flex-start);
+  cursor: pointer;
+  transition: color 0.3s ease-out;
+
+  &:hover {
+    color: $primary;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  &__checkmark {
+    margin-right: 10px;
+    height: 15px;
+    width: 15px;
+    border: 1px solid $text-secondary;
+
+    svg {
+      transform: scale(0);
+      transition: transform 0.3s ease-out;
+    }
+  }
+
+  input[type="checkbox"]:checked ~ &__checkmark {
+    color: $primary;
+    border-color: $primary;
+    // background-color: $primary;
+
+    svg {
+      transform: scale(1);
+    }
+  }
+
+  input[type="checkbox"]:checked ~ &__text {
+    color: $primary;
+  }
+}

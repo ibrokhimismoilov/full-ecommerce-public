@@ -1,0 +1,26 @@
+.product-card__loading {
+  text-align: center;
+  margin-bottom: 30px;
+  &-img {
+    @include product-loading;
+    height: 200px;
+    margin-bottom: 10px;
+  }
+
+  &-name {
+    height: 1.5rem;
+    display: block;
+    @include product-loading;
+    width: 80%;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-inline: auto;
+  }
+
+  &-price {
+    margin-inline: auto;
+    display: block;
+    @include product-loading;
+    width: 50%;
+  }
+}

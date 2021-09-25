@@ -1,0 +1,42 @@
+// colors
+$main-bg: #fff;
+$primary: #10d4d2;
+
+$text-primary: #000;
+$text-secondary: #8d8d8d;
+$text-white: #fff;
+
+$btn-primary: $primary;
+$btn-text: $text-white;
+
+$colors: (
+  "main": $primary,
+  "red": #fb0b12,
+  "yellow": #fcbf49,
+  "green": #019707,
+  "blue": #349eff,
+  "cyan": #10d4d2,
+  "orange": #d68102,
+  "pink": #fe7e73,
+  "white": #fff,
+  "black": #000,
+);
+
+// sizes
+$header-height: 100px;
+$header-tablet-height: 70px;
+$header-mobile-height: 40px;
+$header-shrink-height: 70px;
+
+$mobile-width: 600px;
+$tablet-width: 1024px;
+
+// other styles
+$box-shadow: 0px 8px 24px rgba(149, 157, 165, 0.2);
+$numbers: (0, 1, 2, 3, 4, 5, 6, 7, 8);
+
+// gradients
+
+$gradient-base-color: #ddd;
+$gradient-shine-color: #e8e8e8;
+$gradient-animation-duration: 1.6s;
